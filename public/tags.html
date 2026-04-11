@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TC2005B - Etiquetas HTML</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"> TC2005B</a>
+            <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menuNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuNavbar">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="tags.html">Tags</a></li>
+                    <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-4">
+
+        <h2 class="mb-4">Ejemplos de Etiquetas HTML</h2>
+
+        <div class="card mb-3">
+            <div class="card-header"><strong>Etiquetas de texto</strong></div>
+            <div class="card-body">
+
+                <p>Este es un párrafo normal con la etiqueta <code>p</code>.</p>
+
+                <p>Esta palabra está en <strong>negritas</strong> con <code>strong</code>.</p>
+
+                <p>Superíndice: X<sup>2</sup> + Y<sup>3</sup></p>
+
+                <p>Subíndice: H<sub>2</sub>O y CO<sub>2</sub></p>
+
+                <p>Esta línea termina aquí.<br />Esta nueva línea empezó con <code>br</code>.</p>
+
+            </div>
+        </div>
+
+        <div class="card mb-3">
+            <div class="card-header"><strong>Enlaces e imágenes</strong></div>
+            <div class="card-body">
+
+                <p>
+                    <a href="https://www.google.com">Ir a Google</a> |
+                    <a href="https://www.tec.mx">Tecnológico de Monterrey</a>
+                </p>
+
+                <img src="img/tec_logo.png" width="200" alt="Logo Tec de Monterrey" class="mt-3">
+
+            </div>
+        </div>
+
+        <div class="card mb-3">
+            <div class="card-header"><strong>Interactividad con JavaScript</strong></div>
+            <div class="card-body">
+
+                <p id="parrafo-dinamico">Este párrafo puede ser cambiado por JavaScript.</p>
+
+                <button id="btn-cambiar-texto" class="btn btn-primary me-2">
+                    Cambiar texto
+                </button>
+
+                <button id="btn-alerta" class="btn btn-warning me-2">
+                    Mostrar alerta
+                </button>
+
+                <button id="btn-toggle" class="btn btn-secondary me-2">
+                    Ocultar caja
+                </button>
+
+                <div id="caja-toggle"
+                     class="mt-3 p-3"
+                     style="background-color: #d4edda; border-radius: 8px;">
+                    ¡Esta caja aparece y desaparece con JavaScript!
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>TC2005B &copy; 2025 — Tecnológico de Monterrey</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    
+</body>
+
+</html>

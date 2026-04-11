@@ -1,0 +1,71 @@
+/* =====================================
+    ESTILO QUE AFECTA A TODA LA PAIGNA
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333333;
+}
+
+/* =====================================
+                HEADER
+===================================== */
+
+header {
+    background-color: #003366;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* =====================================
+            NAVEGACIÓN
+===================================== */
+nav {
+    background-color: #004080;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+/* Para cuando el mouse passa sobre un link */
+nav a:hover {
+    color: #cae614;
+    text-decoration: underline;
+}
+
+/* =====================================
+            CONTENIDO PRINCIPAL
+===================================== */
+.login-box{
+    background-color: white;
+    border-radius: 10px;
+    padding: 40px;
+    max-width: 400px;
+    margin: 40px auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ================================
+   FOOTER
+================================ */
+footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
