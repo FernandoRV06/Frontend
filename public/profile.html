@@ -50,6 +50,9 @@
 
                         <p><strong>Universidad:</strong> Tecnológico de Monterrey</p>
                         <p><strong>Semestre:</strong> 4<sup>to</sup></p>
+                        
+                        <hr>
+                        <a id="btn-juego" href="#" class="btn btn-success mt-2"> Ir al Juego</a>
 
                     </div>
                 </div>
@@ -64,6 +67,14 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="img/config.js"></script>
+    <script>
+        const usuario = JSON.parse(sessionStorage.getItem("usuario"));
+        if (usuario) {
+            document.getElementById("nombre-dinamico").textContent = usuario.username;
+            document.getElementById("btn-juego").href = "game.html?id=" + usuario.id;
+        }
+    </script>
 
 </body>
 

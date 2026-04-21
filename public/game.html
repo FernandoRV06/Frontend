@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Juego</title>
+</head>
+<body>
+    <script src="img/config.js"></script>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const userId = params.get("id");
+
+        if (!userId) {
+            alert("No se encontró ID de usuario. Vuelve al login.");
+            window.location.href = "index.html";
+        }
+
+        window.USER_ID = userId;
+        window.API_URL_GAME = API_URL; // viene de config.js
+    </script>
+
+    <!-- Aquí va el juego Unity (ver Paso 4) -->
+    <!-- Unity inyecta su canvas aquí -->
+    <div id="unity-container">
+        <canvas id="unity-canvas"></canvas>
+    </div>
+
+    <!-- Scripts que genera Unity WebGL Build -->
+    <script src="Build/game.loader.js"></script>
+    <script>
+        createUnityInstance(document.querySelector("#unity-canvas"), {
+            dataUrl: "Build/game.data",
+            frameworkUrl: "Build/game.framework.js",
+            codeUrl: "Build/game.wasm",
+        });
+    </script>
+</body>
+</html>
