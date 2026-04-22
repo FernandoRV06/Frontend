@@ -3,9 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Juego</title>
+    <style>
+        body { margin: 0; background: #1a1a2e; color: white; font-family: Arial; }
+        #info { text-align: center; padding: 10px; font-size: 18px; }
+        #unity-canvas { display: block; margin: 0 auto; width: 960px; height: 600px; }
+    </style>
 </head>
 <body>
-    <script src="img/config.js"></script>
+    <div id="info">Cargando datos del usuario...</div>
+    <canvas id="unity-canvas"></canvas>
+
+    <script src="config.js"></script>
     <script>
         const params = new URLSearchParams(window.location.search);
         const userId = params.get("id");
@@ -16,23 +24,18 @@
         }
 
         window.USER_ID = userId;
-        window.API_URL_GAME = API_URL; // viene de config.js
+        window.API_URL_GAME = API_URL;
+
+        fetch(API_URL + "/users/" + userId)
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById("info").textContent =
+                    " Jugador: " + data.username + " | Puntos guardados: " + data.score;
+            })
+            .catch(() => {
+                document.getElementById("info").textContent = " Error al conectar con la API";
+            });
     </script>
 
-    <!-- Aquí va el juego Unity (ver Paso 4) -->
-    <!-- Unity inyecta su canvas aquí -->
-    <div id="unity-container">
-        <canvas id="unity-canvas"></canvas>
-    </div>
-
-    <!-- Scripts que genera Unity WebGL Build -->
-    <script src="Build/game.loader.js"></script>
-    <script>
-        createUnityInstance(document.querySelector("#unity-canvas"), {
-            dataUrl: "Build/game.data",
-            frameworkUrl: "Build/game.framework.js",
-            codeUrl: "Build/game.wasm",
-        });
-    </script>
 </body>
 </html>
